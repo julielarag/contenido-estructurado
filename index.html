@@ -1,136 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!--
-    HEAD
-    Contiene información sobre el documento.
-    Aquí podemos definir metadata, título, favicon y archivos externos.
-  -->
-
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-  <meta
-    name="description"
-    content="Documento base para estudiar estructura HTML, semántica y cajas."
-  >
-  <title>HTML, estructura y cajas</title>
-  <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discografía de Billie Eilish">
+  <title>Discografía de Billie Eilish</title>
   <link rel="icon" href="favicon.ico">
-  <!-- Hoja de estilos externa -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <h1>Billie Eilish</h1>
+    <p class="tagline">Discografía</p>
 
-  <!--
-    HEADER
-    Contenido introductorio del documento.
-  -->
-  <header>
-
-    <h1>HTML, estructura y cajas</h1>
-
-    <p>
-      Los elementos HTML generan cajas, pero cada elemento tiene una función dentro del documento.
-    </p>
-
-    <!--
-      NAV
-      Contiene enlaces principales de navegación.
-    -->
-    <nav>
-      <a href="#elementos">Elementos</a>
-      <a href="#estructura">Estructura</a>
-      <a href="#jerarquia">Jerarquía</a>
+    <nav aria-label="Navegación principal">
+      <a href="#albums">Álbumes</a>
+      <a href="#eps">EPs</a>
+      <a href="#singles">Singles independientes</a>
     </nav>
-
   </header>
 
-  <!--
-    MAIN
-    Contiene el contenido principal del documento.
-  -->
-  <main>
-
-    <!--
-      SECTION
-      Agrupa contenido relacionado por un mismo tema.
-    -->
-    <section id="elementos">
-
-      <h2>Los elementos HTML son cajas</h2>
-
+  <main class="site-main">
+    <section class="intro">
+      <h2>Discografía</h2>
       <p>
-        Cada elemento ocupa un espacio dentro del documento.
-        El navegador calcula su tamaño, posición y relación con otros elementos.
+        La discografía de Billie Eilish reúne EPs, álbumes de estudio,
+        sencillos independientes y colaboraciones clave.
       </p>
+    </section>
 
-      <!--
-        ARTICLE
-        Representa una unidad de contenido dentro de esta sección.
-      -->
-      <article>
+    <section id="albums" class="album-section">
+      <h2>Álbumes de estudio</h2>
 
-        <h3>No todas las cajas son iguales</h3>
+      <article class="album">
+        <section class="album-cover cover-when-we-all">
+          <div class="cover-frame">
+            <span class="cover-kicker">Billie Eilish</span>
+            <span class="cover-title">WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?</span>
+            <span class="cover-year">2019</span>
+          </div>
+        </section>
 
-        <p>
-          Un título, un párrafo y un enlace generan cajas,
-          pero tienen funciones diferentes.
-        </p>
+        <section class="album-details">
+          <header class="album-header">
+            <h3>When We All Fall Asleep, Where Do We Go? (2019)</h3>
+          </header>
 
-        <a href="#">Esto es un enlace</a>
+          <dl class="album-meta">
+            <div>
+              <dt>Año</dt>
+              <dd>2019</dd>
+            </div>
+            <div>
+              <dt>Tipo</dt>
+              <dd>Álbum de estudio (debut)</dd>
+            </div>
+            <div>
+              <dt>Sello</dt>
+              <dd>Darkroom / Interscope Records</dd>
+            </div>
+            <div>
+              <dt>Duración total</dt>
+              <dd>42:56</dd>
+            </div>
+            <div>
+              <dt>Género</dt>
+              <dd>Electropop, art pop, avant-pop</dd>
+            </div>
+            <div>
+              <dt>Productor</dt>
+              <dd>Finneas O'Connell</dd>
+            </div>
+          </dl>
 
+          <section class="track-list-section">
+            <h4>Canciones</h4>
+            <ol class="track-list">
+              <li><span class="track-title">!!!!!!</span><span class="track-time">0:14</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">bad guy</span><span class="track-time">3:14</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">xanny</span><span class="track-time">4:03</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">you should see me in a crown</span><span class="track-time">3:00</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">all the good girls go to hell</span><span class="track-time">2:48</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">wish you were gay</span><span class="track-time">3:41</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">when the party's over</span><span class="track-time">3:16</span><span class="track-credit">Finneas O'Connell</span></li>
+              <li><span class="track-title">8</span><span class="track-time">2:53</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">my strange addiction</span><span class="track-time">3:00</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">bury a friend</span><span class="track-time">3:13</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">ilomilo</span><span class="track-time">2:36</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">listen before i go</span><span class="track-time">4:03</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">i love you</span><span class="track-time">4:52</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">goodbye</span><span class="track-time">1:59</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+            </ol>
+          </section>
+        </section>
       </article>
 
-    </section>
+      <article class="album">
+        <section class="album-cover cover-happier">
+          <div class="cover-frame">
+            <span class="cover-kicker">Billie Eilish</span>
+            <span class="cover-title">Happier Than Ever</span>
+            <span class="cover-year">2021</span>
+          </div>
+        </section>
 
-    <section id="estructura">
+        <section class="album-details">
+          <header class="album-header">
+            <h3>Happier Than Ever (2021)</h3>
+          </header>
 
-      <h2>Las cajas forman estructuras</h2>
+          <dl class="album-meta">
+            <div>
+              <dt>Año</dt>
+              <dd>2021</dd>
+            </div>
+            <div>
+              <dt>Tipo</dt>
+              <dd>Álbum de estudio</dd>
+            </div>
+            <div>
+              <dt>Sello</dt>
+              <dd>Darkroom / Interscope Records</dd>
+            </div>
+            <div>
+              <dt>Duración total</dt>
+              <dd>56:07</dd>
+            </div>
+            <div>
+              <dt>Género</dt>
+              <dd>Electropop, jazz pop</dd>
+            </div>
+            <div>
+              <dt>Productor</dt>
+              <dd>Finneas O'Connell</dd>
+            </div>
+          </dl>
 
-      <p>
-        Una caja puede contener otras cajas.
-        Las etiquetas HTML describen cómo se relaciona cada parte del contenido.
-      </p>
-
-      <article>
-
-        <h3>Una estructura contiene más estructuras</h3>
-
-        <p>
-          Este artículo está dentro de una sección y contiene
-          a su vez un título y un párrafo.
-        </p>
-
+          <section class="track-list-section">
+            <h4>Canciones</h4>
+            <ol class="track-list">
+              <li><span class="track-title">Getting Older</span><span class="track-time">4:04</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">I Didn't Change My Number</span><span class="track-time">2:38</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Billie Bossa Nova</span><span class="track-time">3:16</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">my future</span><span class="track-time">3:28</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Oxytocin</span><span class="track-time">3:30</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">GOLDWING</span><span class="track-time">2:31</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Lost Cause</span><span class="track-time">3:32</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Halley's Comet</span><span class="track-time">3:54</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Not My Responsibility</span><span class="track-time">3:47</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">OverHeated</span><span class="track-time">3:34</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Everybody Dies</span><span class="track-time">3:26</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Your Power</span><span class="track-time">4:05</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">NDA</span><span class="track-time">3:15</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Therefore I Am</span><span class="track-time">2:54</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Happier Than Ever</span><span class="track-time">4:58</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">Male Fantasy</span><span class="track-time">3:14</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+            </ol>
+          </section>
+        </section>
       </article>
 
+      <article class="album">
+        <section class="album-cover cover-hit-me">
+          <div class="cover-frame">
+            <span class="cover-kicker">Billie Eilish</span>
+            <span class="cover-title">Hit Me Hard and Soft</span>
+            <span class="cover-year">2024</span>
+          </div>
+        </section>
+
+        <section class="album-details">
+          <header class="album-header">
+            <h3>Hit Me Hard and Soft (2024)</h3>
+          </header>
+
+          <dl class="album-meta">
+            <div>
+              <dt>Año</dt>
+              <dd>2024</dd>
+            </div>
+            <div>
+              <dt>Tipo</dt>
+              <dd>Álbum de estudio</dd>
+            </div>
+            <div>
+              <dt>Sello</dt>
+              <dd>Darkroom / Interscope Records</dd>
+            </div>
+            <div>
+              <dt>Duración total</dt>
+              <dd>43:45</dd>
+            </div>
+            <div>
+              <dt>Género</dt>
+              <dd>Alternative pop, bedroom pop</dd>
+            </div>
+            <div>
+              <dt>Productor</dt>
+              <dd>Finneas O'Connell</dd>
+            </div>
+          </dl>
+
+          <section class="track-list-section">
+            <h4>Canciones</h4>
+            <ol class="track-list">
+              <li><span class="track-title">SKINNY</span><span class="track-time">3:39</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">LUNCH</span><span class="track-time">2:59</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">CHIHIRO</span><span class="track-time">5:03</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">BIRDS OF A FEATHER</span><span class="track-time">3:30</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">WILDFLOWER</span><span class="track-time">4:21</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">THE GREATEST</span><span class="track-time">4:53</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">L'AMOUR DE MA VIE</span><span class="track-time">5:33</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">THE DINER</span><span class="track-time">3:06</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">BITTERSUITE</span><span class="track-time">4:58</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">BLUE</span><span class="track-time">5:43</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+            </ol>
+          </section>
+        </section>
+      </article>
     </section>
 
-    <section id="jerarquia">
+    <section id="eps" class="eps-section">
+      <h2>EPs</h2>
 
-      <h2>Las etiquetas crean jerarquía</h2>
+      <article class="ep">
+        <section class="ep-details">
+          <header>
+            <h3>Don't Smile at Me (2017)</h3>
+          </header>
 
-      <p>
-        Un h1 representa el título principal.
-        Un h2 identifica una sección.
-        Un h3 introduce un nivel secundario.
-      </p>
+          <dl class="album-meta">
+            <div>
+              <dt>Año</dt>
+              <dd>2017</dd>
+            </div>
+            <div>
+              <dt>Tipo</dt>
+              <dd>EP</dd>
+            </div>
+            <div>
+              <dt>Sello</dt>
+              <dd>Darkroom / Interscope Records</dd>
+            </div>
+            <div>
+              <dt>Duración total</dt>
+              <dd>24:03</dd>
+            </div>
+            <div>
+              <dt>Género</dt>
+              <dd>Electropop, R&B</dd>
+            </div>
+          </dl>
 
+          <section class="track-list-section">
+            <h4>Canciones</h4>
+            <ol class="track-list">
+              <li><span class="track-title">COPYCAT</span><span class="track-time">3:15</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">idontwannabeyouanymore</span><span class="track-time">3:31</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">my boy</span><span class="track-time">3:07</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">watch</span><span class="track-time">3:57</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">party favor</span><span class="track-time">3:28</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">bellyache</span><span class="track-time">3:24</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">ocean eyes</span><span class="track-time">3:20</span><span class="track-credit">Finneas O'Connell</span></li>
+              <li><span class="track-title">hostage</span><span class="track-time">4:21</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+            </ol>
+          </section>
+        </section>
+      </article>
+
+      <article class="ep">
+        <section class="ep-details">
+          <header>
+            <h3>Guitar Songs (2022)</h3>
+          </header>
+
+          <dl class="album-meta">
+            <div>
+              <dt>Año</dt>
+              <dd>2022</dd>
+            </div>
+            <div>
+              <dt>Tipo</dt>
+              <dd>EP</dd>
+            </div>
+            <div>
+              <dt>Sello</dt>
+              <dd>Darkroom / Interscope Records</dd>
+            </div>
+            <div>
+              <dt>Duración total</dt>
+              <dd>8:17</dd>
+            </div>
+            <div>
+              <dt>Productor</dt>
+              <dd>Finneas O'Connell</dd>
+            </div>
+          </dl>
+
+          <section class="track-list-section">
+            <h4>Canciones</h4>
+            <ol class="track-list">
+              <li><span class="track-title">TV</span><span class="track-time">4:41</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+              <li><span class="track-title">The 30th</span><span class="track-time">3:36</span><span class="track-credit">Billie Eilish, Finneas O'Connell</span></li>
+            </ol>
+          </section>
+        </section>
+      </article>
     </section>
 
+    <section id="singles" class="singles-section">
+      <h2>Singles independientes</h2>
+      <ul class="single-list">
+        <li><span class="single-title">Six Feet Under</span><span class="single-details">2016 · 3:09 · Finneas O'Connell · su segundo single, publicado originalmente en SoundCloud</span></li>
+        <li><span class="single-title">Ocean Eyes</span><span class="single-details">2016 · 3:20 · Finneas O'Connell · primer single, subido a SoundCloud</span></li>
+        <li><span class="single-title">Bored</span><span class="single-details">2017 · 3:00 · Billie Eilish, Finneas O'Connell, Aron Forbes, Tim Anderson · soundtrack de la 1ª temporada de “13 Reasons Why”</span></li>
+        <li><span class="single-title">&amp;Burn</span><span class="single-details">2017 · 2:59 · Finneas O'Connell, Vince Staples · versión alternativa de “watch”; luego incluida en una reedición del EP</span></li>
+        <li><span class="single-title">lovely</span><span class="single-details">2018 · 3:20 · Billie Eilish, Khalid, Finneas O'Connell · soundtrack de “13 Reasons Why: Season 2”</span></li>
+        <li><span class="single-title">Come Out and Play</span><span class="single-details">2018 · 3:30 · Billie Eilish, Finneas O'Connell · escrita para una campaña navideña de Apple</span></li>
+        <li><span class="single-title">When I Was Older</span><span class="single-details">2019 · 4:31 · Billie Eilish, Finneas O'Connell · inspirada en la película “Roma” de Alfonso Cuarón</span></li>
+        <li><span class="single-title">No Time to Die</span><span class="single-details">2020 · 4:24 · Billie Eilish, Finneas O'Connell · tema de la película de James Bond; ganó el Grammy a Mejor Canción para Medios Visuales</span></li>
+        <li><span class="single-title">What Was I Made For?</span><span class="single-details">2023 · 3:42 · Billie Eilish, Finneas O'Connell · del soundtrack de Barbie; ganó el Óscar a Mejor Canción Original</span></li>
+        <li><span class="single-title">Guess</span><span class="single-details">2024 · 2:23 · Charlotte Aitchison, Billie Eilish O'Connell, Harrison Patrick Smith, Dylan Brady, Finneas O'Connell · primera colaboración oficial de Billie en la canción de otro artista; llegó al #1 en UK</span></li>
+        <li><span class="single-title">INTRO</span><span class="single-details">2026 · 1:56 · Billie Eilish, Finneas O'Connell · pista de apertura de cada show del “Hit Me Hard and Soft: The Tour”; contiene fragmentos de “Chihiro” y “The Greatest”</span></li>
+      </ul>
+    </section>
   </main>
 
-  <!--
-    FOOTER
-    Contiene información de cierre o complementaria.
-  -->
-  <footer>
-
+  <footer class="site-footer">
     <p>Guía de estudio · HTML + CSS</p>
-
   </footer>
-
 </body>
 </html>
