@@ -1,134 +1,319 @@
-/*
-  ============================================================
-  TOKENS
-  ============================================================
-
-  Variables reutilizables para mantener un sistema visual
-  consistente en todo el documento.
-*/
-
 :root {
-  --color-background: #f4f4f0;
-  --color-text: #171717;
-  --color-accent: #5b3df5;
-
-  --font-family-base: system-ui, Arial, Helvetica, sans-serif;
-
-  --font-size-body: 1rem;
-  --font-size-h1: 3rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.25rem;
+  --color-ink: #171516;
+  --color-paper: #f4f0e8;
+  --color-acid: #d7f33f;
+  --color-coral: #ff765f;
+  --color-lilac: #c8b9ff;
+  --color-blue: #a8d8e8;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
 }
-
-/*
-  ============================================================
-  SELECTOR UNIVERSAL
-  ============================================================
-  * funciona como un comodín.
-  Selecciona todos los elementos HTML.
-*/
 
 * {
   box-sizing: border-box;
-  /*
-    Regla temporal para visualizar las cajas.
-    Puede eliminarse cuando ya no sea necesaria.
-  */
-  outline: 1px solid;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
-/*
-  ============================================================
-  BODY
-  ============================================================
-
-  Define el sistema visual base del documento.
-*/
 body {
   margin: 0;
-
-  background-color: var(--color-background);
-  color: var(--color-text);
-
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
 }
 
-/*
-  ============================================================
-  JERARQUÍA TIPOGRÁFICA
-  ============================================================
-
-  HTML define la jerarquía.
-  CSS controla su representación visual.
-*/
-
-h1 {
-  font-size: var(--font-size-h1);
+.hero {
+  min-height: 88vh;
+  padding: 2rem clamp(1.25rem, 5vw, 6rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  position: relative;
+  overflow: hidden;
 }
 
-h2 {
-  font-size: var(--font-size-h2);
+.hero::before {
+  content: "";
+  width: min(48vw, 600px);
+  height: min(48vw, 600px);
+  position: absolute;
+  right: -8vw;
+  bottom: -18vw;
+  background: var(--color-acid);
+  border-radius: 50%;
 }
 
-h3 {
-  font-size: var(--font-size-h3);
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
-
-/*
-  ============================================================
-  LINKS
-  ============================================================
-
-  El color de acento identifica enlaces y acciones.
-*/
-
-a {
-  color: var(--color-accent);
+.eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
 }
 
+.hero h1 {
+  max-width: 900px;
+  margin: auto 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0;
+}
 
-/*
-  ============================================================
-  CONTENEDOR PRINCIPAL
-  ============================================================
+.tagline {
+  max-width: 650px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.1;
+}
 
-  width:
-  ocupa una proporción del espacio disponible.
+.descriptor {
+  max-width: 510px;
+  margin: 1.5rem 0 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
-  max-width:
-  evita que el contenido crezca demasiado.
+.cta {
+  width: fit-content;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-acid);
+  color: var(--color-ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
 
-  margin: 0 auto:
-  distribuye el espacio horizontal y centra la caja.
-*/
+.cta:hover,
+.cta:focus-visible {
+  background: var(--color-paper);
+  transform: translateY(-3px);
+}
 
 main {
-  width: 65%;
-  min-width: 290px;
-  max-width: 1240px;
+  width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
+.emotion-section {
+  padding: 6rem 0 3rem;
+}
 
-/*
-  ============================================================
-  ESPACIADO BÁSICO
-  ============================================================
-*/
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 2px solid var(--color-ink);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
 
-header,
-main,
+.section-heading h2,
+.about-section h2 {
+  max-width: 700px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.emotion-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.emotion-card {
+  min-height: 255px;
+  background: var(--card-color, var(--color-lilac));
+  transition: transform 180ms ease;
+}
+
+.emotion-card:hover {
+  transform: rotate(-1deg) translateY(-4px);
+}
+
+.emotion-card a {
+  min-height: 255px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.emotion-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.emotion-card h3 {
+  margin: auto 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.emotion-card p {
+  max-width: 34rem;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.card-arrow {
+  align-self: end;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.emotion-happy { --card-color: var(--color-acid); }
+.emotion-sad { --card-color: var(--color-blue); }
+.emotion-angry { --card-color: var(--color-coral); }
+.emotion-in-love { --card-color: #f3b7cd; }
+.emotion-obsessed { --card-color: #e69ab7; }
+.emotion-heartbroken { --card-color: #b8a4d8; }
+.emotion-anxious { --card-color: #e7cf91; }
+.emotion-lonely { --card-color: #b6c0c5; }
+.emotion-nostalgic { --card-color: #e4b58f; }
+.emotion-confused { --card-color: #a9c695; }
+.emotion-overwhelmed { --card-color: #dda7a7; }
+.emotion-numb { --card-color: #c7c7c0; }
+.emotion-confident { --card-color: #f0a64e; }
+.emotion-calm { --card-color: #a7d2c1; }
+.emotion-peaceful { --card-color: #b9dfc8; }
+.emotion-longing { --card-color: #b5b8e6; }
+.emotion-hopeful { --card-color: #f2d17c; }
+
+.about-section {
+  max-width: 800px;
+  border-top: 2px solid var(--color-ink);
+  padding: 4rem 0 6rem;
+}
+
+.about-section h2 {
+  margin: 1.5rem 0;
+}
+
+.about-section p:not(.eyebrow) {
+  max-width: 620px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 footer {
-  padding: 2rem;
+  padding: 1.5rem clamp(1rem, 5vw, 6rem);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
-section {
-  margin-bottom: 3rem;
+footer p {
+  margin: 0;
 }
 
-nav a {
-  margin-right: 1rem;
+.mood-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mood-page .hero {
+  min-height: 70vh;
+}
+
+.mood-page main {
+  flex: 1;
+}
+
+.mood-content {
+  max-width: 740px;
+  padding: 5rem 0;
+}
+
+.mood-content h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.mood-content p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.mood-content h3,
+.mood-content h4 {
+  margin: 3rem 0 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.mood-content h4 {
+  margin-top: 2rem;
+  color: #5f5a55;
+}
+
+.specific-moods {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  max-width: 740px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.specific-moods li {
+  padding: 1rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.back-link {
+  color: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: 78vh;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading .eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .emotion-list {
+    grid-template-columns: 1fr;
+  }
+
+  .specific-moods {
+    grid-template-columns: 1fr;
+  }
 }
