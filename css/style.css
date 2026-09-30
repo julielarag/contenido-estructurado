@@ -1,12 +1,14 @@
+@import url("https://use.typekit.net/pso4xut.css");
 :root {
-  --color-ink: #171516;
-  --color-paper: #f4f0e8;
-  --color-acid: #d7f33f;
-  --color-coral: #ff765f;
-  --color-lilac: #c8b9ff;
-  --color-blue: #a8d8e8;
-  --font-display: Georgia, "Times New Roman", serif;
-  --font-body: Arial, Helvetica, sans-serif;
+  --color-bg: #084293;
+  --color-text: #f2f2f2;
+  --color-accent: #96fe69;
+  --font-body: "helvetica-neue-lt-pro", sans-serif;
+  --font-title: "helvetica-neue-lt-pro-cond", sans-serif;
+  --text-body: 1.25rem;
+  --text-h1: 6.5rem;
+  --text-h2: 3rem;
+  --text-h3: 3rem;
 }
 
 * {
@@ -19,8 +21,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-paper);
-  color: var(--color-ink);
+  background: var(--color-bg);
+  color: var(--color-text);
   font-family: var(--font-body);
 }
 
@@ -30,22 +32,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--color-ink);
-  color: var(--color-paper);
   position: relative;
   overflow: hidden;
+  background-image: url("../img/blosh.svg");
+  background-repeat: no-repeat;
+  background-position: right -110%;
+  background-size: auto 130%;
 }
 
-.hero::before {
-  content: "";
-  width: min(48vw, 600px);
-  height: min(48vw, 600px);
-  position: absolute;
-  right: -8vw;
-  bottom: -18vw;
-  background: var(--color-acid);
-  border-radius: 50%;
-}
 
 .hero > * {
   position: relative;
@@ -61,35 +55,34 @@ body {
 }
 
 .hero h1 {
-  max-width: 900px;
-  margin: auto 0 1rem;
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 400;
+ margin: 5;
+  font-size: var(--text-h1);
+  font-weight: 900;
   line-height: 0.88;
   letter-spacing: 0;
+  color: var(--color-accent);
 }
 
 .tagline {
-  max-width: 650px;
+  max-width: 600px;
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.1;
+  font-family: var(--font-body);
+  font-size: var(--text-h2);
+  font-weight: 400
 }
 
 .descriptor {
-  max-width: 510px;
-  margin: 1.5rem 0 2rem;
-  font-size: 1rem;
+  max-width: 450px;
+  margin: 5rem 0 5rem;
+  font-size: var(--text-body);
   line-height: 1.6;
 }
 
 .cta {
   width: fit-content;
   padding: 0.9rem 1.1rem;
-  background: var(--color-acid);
-  color: var(--color-ink);
+  background: var(--color-accent);
+  color: var(--color-bg);
   font-weight: 700;
   text-decoration: none;
   transition: transform 180ms ease, background 180ms ease;
@@ -97,223 +90,11 @@ body {
 
 .cta:hover,
 .cta:focus-visible {
-  background: var(--color-paper);
+  background: var(--color-accent);
   transform: translateY(-3px);
 }
 
 main {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-}
-
-.emotion-section {
-  padding: 6rem 0 3rem;
-}
-
-.section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
-  border-bottom: 2px solid var(--color-ink);
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-}
-
-.section-heading h2,
-.about-section h2 {
-  max-width: 700px;
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 400;
-  line-height: 0.95;
-}
-
-.emotion-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.emotion-card {
-  min-height: 255px;
-  background: var(--card-color, var(--color-lilac));
-  transition: transform 180ms ease;
-}
-
-.emotion-card:hover {
-  transform: rotate(-1deg) translateY(-4px);
-}
-
-.emotion-card a {
-  min-height: 255px;
-  display: flex;
-  flex-direction: column;
-  padding: 1.4rem;
-  color: var(--color-ink);
-  text-decoration: none;
-}
-
-.emotion-number {
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.emotion-card h3 {
-  margin: auto 0 0.6rem;
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 400;
-  line-height: 0.9;
-}
-
-.emotion-card p {
-  max-width: 34rem;
-  margin: 0;
-  line-height: 1.45;
-}
-
-.card-arrow {
-  align-self: end;
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.emotion-happy { --card-color: var(--color-acid); }
-.emotion-sad { --card-color: var(--color-blue); }
-.emotion-angry { --card-color: var(--color-coral); }
-.emotion-in-love { --card-color: #f3b7cd; }
-.emotion-obsessed { --card-color: #e69ab7; }
-.emotion-heartbroken { --card-color: #b8a4d8; }
-.emotion-anxious { --card-color: #e7cf91; }
-.emotion-lonely { --card-color: #b6c0c5; }
-.emotion-nostalgic { --card-color: #e4b58f; }
-.emotion-confused { --card-color: #a9c695; }
-.emotion-overwhelmed { --card-color: #dda7a7; }
-.emotion-numb { --card-color: #c7c7c0; }
-.emotion-confident { --card-color: #f0a64e; }
-.emotion-calm { --card-color: #a7d2c1; }
-.emotion-peaceful { --card-color: #b9dfc8; }
-.emotion-longing { --card-color: #b5b8e6; }
-.emotion-hopeful { --card-color: #f2d17c; }
-
-.about-section {
-  max-width: 800px;
-  border-top: 2px solid var(--color-ink);
-  padding: 4rem 0 6rem;
-}
-
-.about-section h2 {
-  margin: 1.5rem 0;
-}
-
-.about-section p:not(.eyebrow) {
-  max-width: 620px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-footer {
-  padding: 1.5rem clamp(1rem, 5vw, 6rem);
-  background: var(--color-ink);
-  color: var(--color-paper);
-}
-
-footer p {
-  margin: 0;
-}
-
-.mood-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.mood-page .hero {
-  min-height: 70vh;
-}
-
-.mood-page main {
-  flex: 1;
-}
-
-.mood-content {
-  max-width: 740px;
-  padding: 5rem 0;
-}
-
-.mood-content h2 {
-  margin: 0 0 1rem;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 400;
-  line-height: 0.95;
-}
-
-.mood-content p {
-  max-width: 600px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.mood-content h3,
-.mood-content h4 {
-  margin: 3rem 0 1rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.12rem;
-  text-transform: uppercase;
-}
-
-.mood-content h4 {
-  margin-top: 2rem;
-  color: #5f5a55;
-}
-
-.specific-moods {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.7rem;
-  max-width: 740px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.specific-moods li {
-  padding: 1rem;
-  border: 1px solid var(--color-ink);
-  background: var(--color-paper);
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-}
-
-.back-link {
-  color: inherit;
-  font-weight: 700;
-}
-
-@media (max-width: 680px) {
-  .hero {
-    min-height: 78vh;
-  }
-
-  .section-heading {
-    display: block;
-  }
-
-  .section-heading .eyebrow {
-    margin-bottom: 1rem;
-  }
-
-  .emotion-list {
-    grid-template-columns: 1fr;
-  }
-
-  .specific-moods {
-    grid-template-columns: 1fr;
-  }
 }
