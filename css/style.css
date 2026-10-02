@@ -71,28 +71,6 @@ body {
   text-transform: uppercase;
 }
 
-.hero .home-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: fit-content;
-  padding: 0.8rem 1rem;
-  color: var(--color-bg);
-  background: var(--color-accent);
-  text-decoration: none;
-  transition: transform 180ms ease;
-}
-
-.hero .home-link:hover,
-.hero .home-link:focus-visible {
-  transform: translateY(-3px);
-}
-
-.hero .home-link:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 4px;
-}
-
 .hero h1 {
  margin: 5;
   font-size: var(--text-h1);
@@ -117,7 +95,8 @@ body {
   line-height: 1.6;
 }
 
-.cta {
+.cta,
+.hero .home-link {
   width: fit-content;
   padding: 0.9rem 1.1rem;
   background: var(--color-accent);
@@ -127,8 +106,16 @@ body {
   transition: transform 180ms ease, background 180ms ease;
 }
 
+.hero .home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .cta:hover,
-.cta:focus-visible {
+.cta:focus-visible,
+.hero .home-link:hover,
+.hero .home-link:focus-visible {
   background: var(--color-accent);
   transform: translateY(-3px);
 }
@@ -136,19 +123,43 @@ body {
 .mood-songs footer {display: flex;padding: 1em 0;flex-direction: row;justify-content: space-between;}
 
 .canciones {
-  color: var(--color-bg);
-  background-color: var(--color-accent);
-  max-width: 600px;
-  padding: 2rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  font-size: 1.5rem;
-  list-style: circle;
+  width: 100%;
+  max-width: none;
+  margin: 4rem 0;
+  padding: 0;
+  color: var(--color-text);
+  background: transparent;
+  list-style: none;
+  counter-reset: song;
 }
 
-.canciones ul {
-  padding: 0;
-  margin: 0;
+.canciones li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 7rem;
+  padding: 2rem 5rem 2rem 0;
+  border-bottom: 1px solid rgb(242 242 242 / 35%);
+  color: var(--color-accent);
+  font-family: var(--font-title);
+  font-size: var(--text-h2);
+  font-weight: 900;
+  line-height: 1;
+  counter-increment: song;
+}
+
+.canciones li:first-child {
+  border-top: 1px solid rgb(242 242 242 / 35%);
+}
+
+.canciones li::before {
+  flex: 0 0 3.5rem;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  content: counter(song, decimal-leading-zero);
 }
 
 main {
@@ -269,6 +280,7 @@ main {
 }
 
 .about-section > p:not(.eyebrow) {
+  padding-left:1rem;
   max-width: 760px;
   margin: 1.25rem 0 0;
   font-size: var(--text-body);
@@ -298,6 +310,16 @@ main {
 
   .about-section {
     padding: 5rem 0 6rem;
+  }
+
+  .canciones li {
+    min-height: 5rem;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+  }
+
+  .canciones li::before {
+    flex-basis: 2.5rem;
   }
 }
 
@@ -344,54 +366,16 @@ main {
     margin: 0;
   }
 
-.mood-songs .canciones {
-  width: 100%;
-  max-width: none;
-  margin: 4rem 0;
-  padding: 0;
-  color: var(--color-accent);
-  background: transparent;
-  list-style: none;
-  counter-reset: song;
+.site-footer {
+  padding: 1.5rem clamp(1.25rem, 5vw, 6rem);
+  border-top: 1px solid var(--color-accent);
 }
 
-.mood-songs .canciones li {
-  width: 100%;
-  min-height: 7rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid rgb(242 242 242 / 35%);
-  color: var(--color-accent);
-  font-family: var(--font-title);
-  font-size: var(--text-h2);
-  font-weight: 900;
-  line-height: 1;
-  counter-increment: song;
-}
-
-.mood-songs .canciones li:first-child {
-  border-top: 1px solid rgb(242 242 242 / 35%);
-}
-
-.mood-songs .canciones li::before {
-  display: inline-block;
-  width: 3.5rem;
+.footer-credit {
+  padding: 0rem;
+  max-width: 1180px;
+  margin: 0;
   color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.14rem;
-  vertical-align: middle;
-  content: counter(song, decimal-leading-zero);
-}
-
-@media (max-width: 700px) {
-  .mood-songs .canciones li {
-    min-height: 5rem;
-    padding: 1.5rem 0;
-    font-size: 2rem;
-  }
-
-  .mood-songs .canciones li::before {
-    width: 2.5rem;
-  }
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
